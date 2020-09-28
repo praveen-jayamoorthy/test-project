@@ -1,0 +1,14 @@
+.weather-history {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #e2e2e2;
+    padding: 10px;
+}
+
+.weather-history-wrap {
+    height: 100%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: 35%;
+}

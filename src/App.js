@@ -1,10 +1,16 @@
 import React from 'react';
 import SearchBox from './Component/SearchBox'
+import WeatherReport from './Component/WeatherReport'
+import {connect} from 'react-redux'
+import {addWeather, removeWeather, setErrorMessage} from './Component/WeatherReport/WeatherAction'
+import {addWeatherHistory} from './Component/WeatherHistory/HistoryAction'
+import {bindActionCreators} from 'redux'
+import WeatherHistoryReport from "./Component/WeatherHistory";
 
-const App = () => {
+const App = (props) => {
     const APIKey = process.env.REACT_APP_API_KEY;
-
-    const searchWeather = (searchValue) => {
+    const {addWeather: addWeatherReport, removeWeather: removeWeatherReport, setErrorMessage: setErrorReport, addWeatherHistory: addHistoryReport} = props;
+    const searchWeather = (searchValue, isHistory=false) => {
         console.log(searchValue)
 
         const weather = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=${APIKey}&units=metric`;
@@ -56,25 +62,35 @@ const App = () => {
                     wind: data1.wind.speed,
                     forecast: data2.list,
                 };
-                console.log(weatherInfo)
-
+                addWeatherReport(weatherInfo)
+                if(!isHistory)
+                    addHistoryReport(weatherInfo)
             })
             .catch(error => {
-                console.log(error);
-
+                setErrorReport(error.message)
             });
 
 
     }
 
+    const clearHandler = () => {
+        removeWeatherReport();
+    }
 
     return (
-        <div className="App">
-            <div>
-                <SearchBox searchWeather={searchWeather}/>
+        <div className='main-component'>
+            <div className="wrap">
+                <SearchBox searchWeather={searchWeather} clearHandler={clearHandler}/>
+                <WeatherReport/>
             </div>
+            <WeatherHistoryReport searchWeather={searchWeather}/>
         </div>
     );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({addWeather, removeWeather, setErrorMessage, addWeatherHistory}, dispatch)
+}
+
+
+export default connect(null, mapDispatchToProps)(App);

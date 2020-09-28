@@ -1,6 +1,6 @@
 
 .search {
-    width: 100%;
+    width: 250px;
     position: relative;
     display: flex;
 }
@@ -16,7 +16,7 @@
     color: #9DBFAF;
 }
 
-.searchTerm:focus{
+.searchTerm:focus {
     color: #00B4CC;
 }
 
@@ -33,10 +33,22 @@
 }
 
 /*Resize the wrap to see the search bar change!*/
-.wrap{
-    width: 30%;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.wrap {
+    padding: 15px;
+    width: 65%;
+    margin-right: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.search-icon {
+    height: 90%;
+}
+
+.main-component {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 15px;
 }

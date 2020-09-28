@@ -1,15 +1,20 @@
-const initialState = {
-    serviceDetails : 'staticDatas',
-    timeSlotDetails : null
-}
+import * as Constants from './Constant';
 
-const whetherReducer = (state = initialState, action ) => {
+const initialState = {
+    weatherReport: null,
+    errorMessage: null,
+};
+const whetherReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case 'UPDATE_DESIGN_AREA_LOCALE':
+        case Constants.ADD_WEATHER_REPORT:
+            return {...initialState, ...{weatherReport: action.data}};
+        case Constants.REMOVE_WEATHER_REPORT:
             return initialState;
-        case 'UPDATE_DESIGN_AREA_VIEW':
-            return {... state, ...{designAreaView: action.designAreaView}};
+        case Constants.SET_ERROR_MESSAGE:
+            return {...initialState, ...{errorMessage: action.data}};
+        case Constants.REMOVE_ERROR_MESSAGE:
+            return {...initialState, ...{errorMessage: null}};
         default:
             return state
     }
