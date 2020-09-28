@@ -99,19 +99,19 @@ const NotFount = ({error}) => {
 const WeatherIcon = (type) => {
     switch (type) {
         case  'Thunderstorm':
-            return <i className="fas fa-bolt"/>
+            return <i className="fas fa-bolt weather-icon weather-icon"/>
         case  'Drizzle':
-            return <i className="fas fa-cloud-rain"/>
+            return <i className="fas fa-cloud-rain weather-icon"/>
         case  'Rain':
-            return <i className="fas fa-cloud-showers-heavy"/>
+            return <i className="fas fa-cloud-showers-heavy weather-icon"/>
         case  'Snow':
-            return <i className="fas fa-snow-flake"/>
+            return <i className="fas fa-snow-flake weather-icon"/>
         case  'Clear':
-            return <i className="fas fa-sun"/>
+            return <i className="fas fa-sun weather-icon"/>
         case  'Clouds':
-            return <i className="fas fa-cloud"/>
+            return <i className="fas fa-cloud weather-icon"/>
         default:
-            return <i className="fas fa-smog"/>
+            return <i className="fas fa-smog weather-icon"/>
     }
 }
 

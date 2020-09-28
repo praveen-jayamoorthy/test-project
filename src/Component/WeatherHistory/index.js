@@ -19,7 +19,7 @@ const WeatherHistoryReport = ({weatherHistoryReport, searchWeather}) => {
                                     <div>
                                         {data.city}, {data.country}
                                     </div>
-                                    <div style={{fontSize: '12px'}}>{data.date}</div>
+                                    <div style={{fontSize: '8px'}}>{data.date}</div>
                                 </div>
                                 <div>
                                     <div>{Math.floor(data.temp)}&#176; {data.description}</div>
