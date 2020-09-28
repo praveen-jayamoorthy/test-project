@@ -40,10 +40,11 @@
     margin-right: 15px;
     background-color: #fff;
     border-radius: 5px;
+    overflow: auto;
 }
 
 .search-icon {
-    height: 90%;
+    height: 50%;
 }
 
 .main-component {

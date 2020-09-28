@@ -5,7 +5,7 @@ import './styles.css'
 const WeatherHistoryReport = ({weatherHistoryReport, searchWeather}) => {
     return (
         <div className='weather-history-wrap'>
-            <div>
+            <div style={{padding:'10px'}}>
                 Weather History
             </div>
             <div>

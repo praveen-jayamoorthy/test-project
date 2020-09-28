@@ -49,7 +49,7 @@ const WeatherReport = (props) => {
         return <NotFount error={errorReport}/>
     }
     return (
-        <div>
+        <div style={{padding: '10px'}}>
             please search city
         </div>
     )
@@ -96,7 +96,7 @@ const NotFount = ({error}) => {
     )
 }
 
-const WeatherIcon = (type) => {
+const WeatherIcon = ({type}) => {
     switch (type) {
         case  'Thunderstorm':
             return <i className="fas fa-bolt weather-icon weather-icon"/>

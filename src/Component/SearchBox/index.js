@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './styles.css'
 import searchIcon from './../../assets/search.png'
-import closeButton from './../../assets/close_button.jpg'
+import closeButton from './../../assets/close.png'
 
 const SearchComponent = ({searchWeather, clearHandler}) => {
     const [cityName, setCityName] = useState('');
